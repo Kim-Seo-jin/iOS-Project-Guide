@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B4971CC12F74EFDC0076839C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B4971CC02F74EFDC0076839C /* Moya */; };
+		B4971CC42F74EFFA0076839C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B4971CC32F74EFFA0076839C /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B4971C992F74CF140076839C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4971CC42F74EFFA0076839C /* Kingfisher in Frameworks */,
+				B4971CC12F74EFDC0076839C /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,8 @@
 			);
 			name = HPointRenewal;
 			packageProductDependencies = (
+				B4971CC02F74EFDC0076839C /* Moya */,
+				B4971CC32F74EFFA0076839C /* Kingfisher */,
 			);
 			productName = HPointRenewal;
 			productReference = B4971C8B2F74CF130076839C /* HPointRenewal.app */;
@@ -195,6 +204,10 @@
 			);
 			mainGroup = B4971C822F74CF130076839C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B4971CBF2F74EFDC0076839C /* XCRemoteSwiftPackageReference "Moya" */,
+				B4971CC22F74EFFA0076839C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B4971C8C2F74CF130076839C /* Products */;
 			projectDirPath = "";
@@ -272,7 +285,7 @@
 		B4971CAA2F74CF140076839C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = B4971C8D2F74CF130076839C /* HPointRenewal */;
-			baseConfigurationReferenceRelativePath = Development.xcconfig;
+			baseConfigurationReferenceRelativePath = "New Folder/Development.xcconfig";
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -338,7 +351,7 @@
 		B4971CAB2F74CF140076839C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = B4971C8D2F74CF130076839C /* HPointRenewal */;
-			baseConfigurationReferenceRelativePath = Release.xcconfig;
+			baseConfigurationReferenceRelativePath = "New Folder/Release.xcconfig";
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -547,7 +560,7 @@
 		B4971CBB2F74D3AA0076839C /* Staging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = B4971C8D2F74CF130076839C /* HPointRenewal */;
-			baseConfigurationReferenceRelativePath = Staging.xcconfig;
+			baseConfigurationReferenceRelativePath = "New Folder/Staging.xcconfig";
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -722,6 +735,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4971CBF2F74EFDC0076839C /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		B4971CC22F74EFFA0076839C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4971CC02F74EFDC0076839C /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4971CBF2F74EFDC0076839C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		B4971CC32F74EFFA0076839C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4971CC22F74EFFA0076839C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4971C832F74CF130076839C /* Project object */;
 }
