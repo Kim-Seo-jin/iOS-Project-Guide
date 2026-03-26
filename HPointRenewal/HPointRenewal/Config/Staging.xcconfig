@@ -7,3 +7,10 @@
 
 // Configuration settings file format documentation can be found at:
 // https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+BASE_URL = https:/$()/m-stg.h-point.co.kr
+APP_NAME = HPoint(Stg)
+BUNDLE_ID_SUFFIX = .stg
+
+INFOPLIST_FILE = HPointRenewal/Info.plist
+GENERATE_INFOPLIST_FILE = NO

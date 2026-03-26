@@ -1,9 +1,9 @@
-//
-//  Development.xcconfig
-//  HPointRenewal
-//
-//  Created by 김서진 on 3/26/26.
-//
-
 // Configuration settings file format documentation can be found at:
 // https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+BASE_URL = https:/\/mdev.h-point.co.kr:29845
+APP_NAME = HPoint(Dev)
+BUNDLE_ID_SUFFIX = .dev
+
+INFOPLIST_FILE = HPointRenewal/Info.plist
+GENERATE_INFOPLIST_FILE = NO

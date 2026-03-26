@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct HPointRenewalApp: App {
+
+    private let container = AppDIContainer()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CouponScreen(viewModel: container.makeCouponViewModel())
         }
     }
 }
