@@ -38,7 +38,7 @@ extension HPointAPI: TargetType {
         return [
             "Content-Type": "application/json",
             "teOpsyGbcd": "02",
-            "appVer": "3.1.50",
+            "appVer": "3.3.1",
             "globLang": "KR"
         ]
     }
