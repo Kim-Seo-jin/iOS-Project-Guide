@@ -1,9 +1,7 @@
 import Foundation
-import Combine
 
 // MARK: - Protocol
 protocol CouponUseCaseProtocol {
-    func getCouponList(request: CouponRequestDTO) -> AnyPublisher<[CouponEntity], APIError>
     func getCouponListAsync(request: CouponRequestDTO) async throws -> [CouponEntity]
 }
 
@@ -14,10 +12,6 @@ final class CouponUseCase: CouponUseCaseProtocol {
 
     init(repository: CouponRepositoryInterface) {
         self.repository = repository
-    }
-
-    func getCouponList(request: CouponRequestDTO) -> AnyPublisher<[CouponEntity], APIError> {
-        repository.fetchCoupons(request: request)
     }
 
     func getCouponListAsync(request: CouponRequestDTO) async throws -> [CouponEntity] {

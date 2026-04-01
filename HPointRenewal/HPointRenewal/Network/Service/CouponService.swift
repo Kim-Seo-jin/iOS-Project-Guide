@@ -1,9 +1,7 @@
 import Foundation
-import Combine
 
 // MARK: - Protocol
 protocol CouponServiceProtocol {
-    func fetchCouponList(request: CouponRequest) -> AnyPublisher<CouponListResponse, APIError>
     func fetchCouponListAsync(request: CouponRequest) async throws -> CouponListResponse
 }
 
@@ -46,10 +44,6 @@ struct CouponDTO: Decodable, Hashable {
 
 // MARK: - Implementation
 final class CouponService: BaseService, CouponServiceProtocol {
-
-    func fetchCouponList(request: CouponRequest) -> AnyPublisher<CouponListResponse, APIError> {
-        self.request(.fetchCouponList(request: request))
-    }
 
     func fetchCouponListAsync(request: CouponRequest) async throws -> CouponListResponse {
         try await requestAsync(.fetchCouponList(request: request))

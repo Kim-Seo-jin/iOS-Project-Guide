@@ -36,8 +36,7 @@ struct CouponScreen: View {
             }
             .navigationTitle("쿠폰")
             .task {
-                // async/await 방식으로 로드
-                await viewModel.loadWithAsync()
+                await viewModel.load()
             }
         }
     }

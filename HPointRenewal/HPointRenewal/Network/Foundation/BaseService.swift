@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 import Moya
 
 class BaseService {
@@ -8,27 +7,6 @@ class BaseService {
 
     init(provider: MoyaProvider<HPointAPI> = MoyaProvider<HPointAPI>(plugins: [NetworkLoggerPlugin()])) {
         self.provider = provider
-    }
-
-    // MARK: - Combine
-    func request<T: Decodable>(_ target: HPointAPI) -> AnyPublisher<T, APIError> {
-        Future { [weak self] promise in
-            guard let self else { return }
-            self.provider.request(target) { result in
-                switch result {
-                case .success(let response):
-                    do {
-                        let decoded = try response.map(T.self)
-                        promise(.success(decoded))
-                    } catch {
-                        promise(.failure(.decodingError(error)))
-                    }
-                case .failure(let error):
-                    promise(.failure(.networkError(error)))
-                }
-            }
-        }
-        .eraseToAnyPublisher()
     }
 
     // MARK: - async/await

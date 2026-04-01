@@ -12,37 +12,13 @@ final class CouponViewModel: ObservableObject {
     @Published var toastMessage: String?
 
     private let useCase: CouponUseCaseProtocol
-    private var cancellables = Set<AnyCancellable>()
 
     init(useCase: CouponUseCaseProtocol) {
         self.useCase = useCase
     }
 
-    // MARK: - Combine 방식
-    func loadWithCombine() {
-        isLoading = true
-        errorMessage = nil
-
-        let request = CouponRequestDTO(mcustNo: "", copnGbcd: "01", prfrYn: "N", ptcoId: nil)
-
-        useCase.getCouponList(request: request)
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { [weak self] completion in
-                    self?.isLoading = false
-                    if case .failure(let error) = completion {
-                        self?.errorMessage = error.localizedDescription
-                    }
-                },
-                receiveValue: { [weak self] coupons in
-                    self?.couponList = coupons
-                }
-            )
-            .store(in: &cancellables)
-    }
-
-    // MARK: - async/await 방식
-    func loadWithAsync() async {
+    // MARK: - Data Load
+    func load() async {
         isLoading = true
         errorMessage = nil
         defer { isLoading = false }
